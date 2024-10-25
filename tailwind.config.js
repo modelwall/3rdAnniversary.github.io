@@ -7,11 +7,28 @@ module.exports = {
   ],
   theme: {
     extend: {
+      textShadow: {
+        black: "2px 2px 0 #000, -2px 2px 0 #000, 2px -2px 0 #000, -2px -2px 0 #000",
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+      }, 
+      fontFamily: {
+        geistSans: "var(--font-geist-sans)",
+        geistMono: "var(--font-geist-mono)",
+        playwriteGBS: "var(--font-playwriteGBS)",
+        playwriteGBS: "var(--font-itim)",
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      addUtilities({
+        ".text-outline-black": {
+          textShadow:
+            "2px 2px 0 #000, -2px 2px 0 #000, 2px -2px 0 #000, -2px -2px 0 #000",
+        },
+      });
+  },],
 };
