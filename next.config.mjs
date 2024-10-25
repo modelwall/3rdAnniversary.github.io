@@ -6,7 +6,7 @@ const nextConfig = {
     },
     basePath: '/3rdAnniversary.github.io',
     assetPrefix: '/3rdAnniversary.github.io/',
-    distDir: 'dist', // Add this line
+    distDir: 'out', // Add this line
 };
 
 export default nextConfig;
