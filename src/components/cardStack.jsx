@@ -3,6 +3,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { Play, Pause } from 'lucide-react';
 
 const CardStack = () => {
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
   const [interval, setIntervalTime] = useState(3000); // 3 seconds default
@@ -10,19 +11,19 @@ const CardStack = () => {
   const cards = [
     {
       id: 1,
-      image: "/images/1st.jpg",
+      image: `${basePath}/images/1st.jpg`,
       title: "1st Anniversary",
       date: "2022"
     },
     {
       id: 2,
-      image: "/images/2nd.jpg",
+      image: `${basePath}/images/2nd.jpg`,
       title: "2nd Anniversary",
       date: "2023"
     },
     {
       id: 3,
-      image: "/images/3rd.jpg",
+      image: `${basePath}/images/3rd.jpg`,
       title: "3rd Anniversary!",
       date: "2024"
     },
@@ -143,21 +144,7 @@ const CardStack = () => {
             />
           ))}
         </div>
-        
-        {/* Speed control */}
-        {/* <select
-          value={interval}
-          onChange={(e) => setIntervalTime(Number(e.target.value))}
-          className="bg-white/10 text-white text-sm rounded-lg px-2 py-1 outline-none"
-        >
-          <option value={1000}>Fast</option>
-          <option value={3000}>Normal</option>
-          <option value={5000}>Slow</option>
-        </select> */}
       </div>
-      {/* <div className="absolute -bottom-20 left-0 right-0 text-center text-gray-500 mt-4">
-        {isPlaying ? 'Auto-playing...' : 'Click to advance manually'}
-      </div> */}
     </div>
   );
 };
