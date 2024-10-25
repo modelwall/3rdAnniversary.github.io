@@ -161,8 +161,8 @@ export default function Home() {
             </div>
             <div className="bg-white hover:bg-yellow-200 text-black lg:mt-14 mt-8 rounded-xl container max-w-xl mx-auto w-full sm:w-3/4 md:w-2/3 lg:w-1/2 p-3 font-[family-name:var(--font-mitr-reg)]">
               <p className="text-center text-sm md:text-xl">เพลงรัก - Three Man Down</p>
-              <audio controls loop className="w-full">
-                <source src="/images/เพลงรัก - Three Man Down.mp3" type="audio/mpeg" />
+              <audio controls loop autoPlay className="w-full">
+                <source src={`${basePath}/images/เพลงรัก - Three Man Down.mp3`} type="audio/mpeg" />
                 Your browser does not support the audio element.
               </audio>
             </div>
