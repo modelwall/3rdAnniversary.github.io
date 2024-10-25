@@ -9,6 +9,8 @@ import 'react-h5-audio-player/lib/styles.css';
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
 export default function Home() {
   const [selectedDate, setSelectedDate] = useState('');
   const [selectedMonth, setSelectedMonth] = useState('');
@@ -166,7 +168,7 @@ export default function Home() {
             </div>
             <div className="lg:mt-10 mt-6 w-full justify-items-center grid-rows-1 grid grid-cols-3 gap-4">
               <div className="lg:-mt-40 lg:ms-0 ms-5 mt-10">
-                <Image src="/images/4.png" alt="test1" width={350} height={300} className="shadow-2xl"/>
+                <Image src={`${basePath}/images/4.png`}  alt="test1" width={350} height={300} className="shadow-2xl"/>
               </div>
               <div className="">
                 {/* <Image src="/images/2.jpeg" alt="test2" width={500} height={100} className="shadow-2xl"/>
@@ -174,7 +176,7 @@ export default function Home() {
                 <CardStack />
               </div>
               <div className="lg:-mt-40 lg:me-0 me-10 mt-10">
-                <Image src="/images/3.jpg" alt="test4" width={350} height={300} className="shadow-2xl"/>
+                <Image src={`${basePath}/images/3.jpg`}  alt="test4" width={350} height={300} className="shadow-2xl"/>
               </div>
               {/* <div></div>
               <div className="w-1/2 mt-10">
@@ -193,7 +195,7 @@ export default function Home() {
               />
               <div className=" grid-rows-1 grid grid-cols-3 mt-16">
                 <div className="justify-self-end">
-                  <Image src="/images/face1.png" alt="test4" width={150} height={150} className="shadow-xl w-[100px] h-[100px] lg:w-[200px] lg:h-[200px] object-cover rounded-full"/>
+                  <Image src={`${basePath}/images/face1.png`}  alt="test4" width={150} height={150} className="shadow-xl w-[100px] h-[100px] lg:w-[200px] lg:h-[200px] object-cover rounded-full"/>
                 </div>
                 <div className="lg:mt-12">
                   <p className="text-center font-[family-name:var(--font-pacifico)] text-outline-black lg:text-4xl text-2xl">{"Nattakan"}</p>
@@ -201,7 +203,7 @@ export default function Home() {
                   <p className="text-center font-[family-name:var(--font-pacifico)] text-outline-black lg:text-4xl text-2xl">{"Apinya"}</p>
                 </div>
                 <div className="justify-self-start">
-                  <Image src="/images/face2.png" alt="test4" width={150} height={150} className="shadow-xl w-[100px] h-[100px] lg:w-[200px] lg:h-[200px] object-cover rounded-full"/>
+                  <Image src={`${basePath}/images/face2.png`} alt="test4" width={150} height={150} className="shadow-xl w-[100px] h-[100px] lg:w-[200px] lg:h-[200px] object-cover rounded-full"/>
                 </div>
               </div>
             </div>
