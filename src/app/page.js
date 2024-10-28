@@ -4,6 +4,7 @@ import Image from 'next/image';
 import InteractiveBackground from "@/components/interactiveBG";
 import CardStack from "@/components/cardStack";
 import TextRevealCard from "@/components/textCard";
+import ImagesBackground from "@/components/imagesBG";
 import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
 import Carousel from "react-multi-carousel";
