@@ -84,67 +84,90 @@ export default function Home() {
       
         {showForm && (
           <ImagesBackground>
-          <div className={`backdrop-blur-xl shadow-lg ring-4 ring-pink-500 rounded-xl p-10 w-full max-w-lg relative z-10 bg-white flex justify-center transition-opacity duration-500 ease-in-out ${formOpacity}`}>
-            <div className="space-y-4">
-              <span className="text-2xl lg:text-3xl md:text-2xl text-pink-500 text-center font-[family-name:var(--font-mitr-reg)]">
-                กรอกวันที่เริ่มคบให้ถูกก่อน!
-              </span>
-              <div className="flex flex-row justify-center">
-                <select 
-                  className={`p-2 me-2 w-15 border rounded-lg text-black bg-white hover:border-yellow-300 
-                    ${!isCorrect && selectedDate !== '23' ? 'border-red-500' : ''} 
-                    ${shake && selectedDate !== '23' ? 'shake' : ''}`}
-                  value={selectedDate}
-                  onChange={(e) => setSelectedDate(e.target.value)}
-                >
-                  <option value="" disabled>Day</option>
-                  {dates.map(date => (
-                    <option key={date} value={date}>
-                      {date}
-                    </option>
-                  ))}
-                </select>
-                
-                <select 
-                  className={`p-2 me-2 border rounded-lg text-black bg-white hover:border-yellow-300 
-                    ${!isCorrect && selectedMonth !== '11' ? 'border-red-500' : ''} 
-                    ${shake && selectedMonth !== '11' ? 'shake' : ''}`}
-                  value={selectedMonth}
-                  onChange={(e) => setSelectedMonth(e.target.value)}
-                >
-                  <option value="" disabled>Month</option>
-                  {months.map((month, index) => (
-                    <option key={month} value={(index + 1).toString()}>
-                      {month}
-                    </option>
-                  ))}
-                </select>
+           <div className="relative">
+            {/* Animated gradient backgrounds */}
+            <div className="absolute -inset-0.5 bg-gradient-to-r from-pink-500 via-purple-500 to-pink-500 rounded-xl opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-gradient-xy blur-sm"></div>
 
-                <select 
-                  className={`p-2 border rounded-lg text-black bg-white hover:border-yellow-300 
-                    ${!isCorrect && selectedYear !== '2021' ? 'border-red-500' : ''} 
-                    ${shake && selectedYear !== '2021' ? 'shake' : ''}`}
-                  value={selectedYear}
-                  onChange={(e) => setSelectedYear(e.target.value)}
-                >
-                  <option value="" disabled>Year</option>
-                  {years.map(year => (
-                    <option key={year} value={year.toString()}>
-                      {year}
+            {/* Main sharp gradient border */}
+            <div className="absolute -inset-0.5 bg-gradient-to-r from-pink-500 via-purple-500 to-pink-500 rounded-xl group-hover:opacity-90 animate-gradient-x"></div>
+
+            {/* Glowing spots */}
+            <div className="absolute -inset-1 rounded-xl opacity-50 group-hover:opacity-70 blur-xl bg-gradient-to-r from-pink-500 via-transparent to-purple-500 animate-pulse"></div>
+            {/* Main content container */}
+            <div
+              className={`backdrop-blur-xl rounded-xl lg:py-14 lg:px-24 px-8 py-8 w-full max-w-2xl relative z-10 bg-white flex justify-center transition-opacity duration-500 ease-in-out ${formOpacity}`}
+            >
+              <div className="space-y-4">
+                <span className="text-2xl lg:text-3xl md:text-2xl bg-gradient-to-r from-pink-500 to-purple-500 text-transparent bg-clip-text text-center font-[family-name:var(--font-mitr-reg)]">
+                  กรอกวันที่เริ่มคบให้ถูกก่อน!
+                </span>
+                <div className="flex flex-row justify-center">
+                  <select
+                    className={`p-2 me-2 w-15 border rounded-lg text-black bg-white hover:border-yellow-300 
+            ${!isCorrect && selectedDate !== "23" ? "border-red-500" : ""} 
+            ${shake && selectedDate !== "23" ? "shake" : ""}`}
+                    value={selectedDate}
+                    onChange={(e) => setSelectedDate(e.target.value)}
+                  >
+                    <option value="" disabled>
+                      Day
                     </option>
-                  ))}
-                </select>
+                    {dates.map((date) => (
+                      <option key={date} value={date}>
+                        {date}
+                      </option>
+                    ))}
+                  </select>
+
+                  <select
+                    className={`p-2 me-2 border rounded-lg text-black bg-white hover:border-yellow-300 
+            ${!isCorrect && selectedMonth !== "11" ? "border-red-500" : ""} 
+            ${shake && selectedMonth !== "11" ? "shake" : ""}`}
+                    value={selectedMonth}
+                    onChange={(e) => setSelectedMonth(e.target.value)}
+                  >
+                    <option value="" disabled>
+                      Month
+                    </option>
+                    {months.map((month, index) => (
+                      <option key={month} value={(index + 1).toString()}>
+                        {month}
+                      </option>
+                    ))}
+                  </select>
+
+                  <select
+                    className={`p-2 border rounded-lg text-black bg-white hover:border-yellow-300 
+            ${!isCorrect && selectedYear !== "2021" ? "border-red-500" : ""} 
+            ${shake && selectedYear !== "2021" ? "shake" : ""}`}
+                    value={selectedYear}
+                    onChange={(e) => setSelectedYear(e.target.value)}
+                  >
+                    <option value="" disabled>
+                      Year
+                    </option>
+                    {years.map((year) => (
+                      <option key={year} value={year.toString()}>
+                        {year}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+                <button
+                  className={`w-full py-3 text-xl rounded-xl font-semibold text-white transition-all duration-300 relative overflow-hidden 
+          font-[family-name:var(--font-mitr-reg)] 
+          ${
+            isHovered
+              ? "bg-gradient-to-r from-pink-500 to-purple-500"
+              : "bg-gray-700"
+          }`}
+                  onMouseEnter={() => setIsHovered(true)}
+                  onMouseLeave={() => setIsHovered(false)}
+                  onClick={handleSubmit}
+                >
+                  {isCorrect ? "ยืนยัน" : "ให้โอกาสอีกที"}
+                </button>
               </div>
-              <button 
-                className={`w-full py-3 text-xl rounded-xl font-semibold text-white transition-all duration-300 relative overflow-hidden 
-                  font-[family-name:var(--font-itim)] 
-                  ${isHovered ? 'bg-gradient-to-r from-pink-500 to-yellow-200' : 'bg-gray-700'}`}
-                onMouseEnter={() => setIsHovered(true)}
-                onMouseLeave={() => setIsHovered(false)}
-                onClick={handleSubmit}
-              >
-                {isCorrect ? "ยืนยัน" : "ให้โอกาสอีกที"}
-              </button>
             </div>
           </div>
           </ImagesBackground>
