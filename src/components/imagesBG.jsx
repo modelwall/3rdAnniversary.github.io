@@ -1,8 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
 
-
-
 const ImagesBackground = ({ children }) => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isClicked, setIsClicked] = useState(false);
