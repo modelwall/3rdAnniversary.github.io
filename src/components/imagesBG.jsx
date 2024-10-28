@@ -1,13 +1,13 @@
 "use client";
 import React, { useState, useEffect } from "react";
 
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
 
 const ImagesBackground = ({ children }) => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isClicked, setIsClicked] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
   const images = [
     `${basePath}/images/1.jpg`,
     `${basePath}/images/2.jpeg`,
