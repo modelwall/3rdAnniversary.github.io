@@ -3,6 +3,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Image from 'next/image';
 import InteractiveBackground from "@/components/interactiveBG";
 import CardStack from "@/components/cardStack";
+import ImagesBackground from "@/components/ImagesBG";
 import TextRevealCard from "@/components/textCard";
 import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
@@ -82,7 +83,7 @@ export default function Home() {
       
       
         {showForm && (
-          <InteractiveBackground>
+          <ImagesBackground>
           <div className={`backdrop-blur-xl rounded-xl p-6 w-full max-w-md relative z-10 bg-white flex justify-center transition-opacity duration-500 ease-in-out ${formOpacity}`}>
             
             
@@ -149,7 +150,7 @@ export default function Home() {
               </button>
             </div>
           </div>
-          </InteractiveBackground>
+          </ImagesBackground>
         )}
 
         {showCelebration && (
