@@ -83,7 +83,7 @@ export default function Home() {
       
       
         {showForm && (
-          <interactiveBG>
+          <ImagesBackground>
           <div className={`backdrop-blur-xl rounded-xl p-6 w-full max-w-md relative z-10 bg-white flex justify-center transition-opacity duration-500 ease-in-out ${formOpacity}`}>
             <div className="space-y-4">
               <span className="text-2xl lg:text-3xl md:text-2xl text-pink-700 text-center font-[family-name:var(--font-mitr-reg)]">
@@ -147,7 +147,7 @@ export default function Home() {
               </button>
             </div>
           </div>
-          </interactiveBG>
+          </ImagesBackground>
         )}
 
         {showCelebration && (
