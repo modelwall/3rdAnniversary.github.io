@@ -3,6 +3,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import InteractiveBackground from "@/components/interactiveBG";
 import CardStack from "@/components/cardStack";
+import ImagesBackground from "@/components/ImagesBG";
 import TextRevealCard from "@/components/textCard";
 import HeartCheckbox from "@/components/heartbox";
 import AudioPlayer from "react-h5-audio-player";
