@@ -188,11 +188,11 @@ export default function Home() {
                   onMouseLeave={() => setIsHovered(false)}
                   onClick={handleSubmit}
                 >
-                  {isCorrect ? "ยืนยัน" : "ให้โอกาสอีกที"}
-                </button>
-              </div>
+                {isCorrect ? "ยืนยัน" : "ให้โอกาสอีกที"}
+              </button>
             </div>
           </div>
+        </div>
         </ImagesBackground>
       )}
 
