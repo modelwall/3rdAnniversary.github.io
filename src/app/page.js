@@ -266,7 +266,7 @@ export default function Home() {
             <p className="text-center text-sm md:text-xl mb-1 lg:mb-0">
               เพลงรัก - Three Man Down
             </p>
-            <audio controls loop className="lg:w-full w-72 mx-auto h-8 lg:h-16">
+            <audio controls autoplay loop className="lg:w-full w-72 mx-auto h-8 lg:h-16">
               <source
                 src={`${basePath}/images/เพลงรัก - Three Man Down.mp3`}
                 type="audio/mpeg"
@@ -310,7 +310,7 @@ export default function Home() {
           <div className="w-full mt-40 lg:w-2/3 mb-10">
             <TextRevealCard
               title="มีอะไรซ่อนอยู่นะ ?"
-              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
+              description="ครบรอบ 3 ปีแล้ว เย่🥳 พี่รักบู้บมากๆน้า ขอบคุณบู้บที่คอยดูแลเอาใจใส่กันตลอด ไปกินไปเที่ยวไปทำอะไรด้วยกัน อยู่กับบู้บแล้วมีความสุขที่สุดเยย อยู่ด้วยกันไปแบบนี้นานๆเลยนะ 💗"
               backgroundColor="bg-gray-700 hover:bg-gradient-to-b from-purple-600 to-yellow-300"
             />
           </div>
